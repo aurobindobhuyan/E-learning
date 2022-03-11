@@ -1,0 +1,28 @@
+/* Login Component*/
+.form {
+     display: flex;
+     flex-direction: column;
+     min-width: 20rem;
+     margin: 0 auto;
+     border: outset;
+     padding: 20px;
+     box-shadow: 6px 7px rgb(98, 112, 235);
+     animation: mymove 4s infinite;
+     background-color: ghostwhite;
+}
+
+@keyframes mymove {
+     50% {
+          box-shadow: 10px 20px 30px blue;
+     }
+}
+
+.loginLink {
+     text-align: center;
+}
+
+.loginLink:hover {
+     cursor: pointer;
+     color: rgb(12 63 223);
+     text-decoration: underline;
+}

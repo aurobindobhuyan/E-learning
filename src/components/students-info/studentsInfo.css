@@ -1,0 +1,23 @@
+/* Form Component && CourseForm component from courses folder */
+.formik {
+     display: flex;
+     flex-direction: column;
+     min-width: 20rem;
+     margin: 0 auto;
+}
+
+/* TableForm Component */
+#tableFormDiv {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between
+}
+
+#tableFormChildDiv {
+     width: 50%;
+     flex: 1 1 230px
+}
+
+#tableFormHeading {
+     flex: 1 1 200px;
+}
