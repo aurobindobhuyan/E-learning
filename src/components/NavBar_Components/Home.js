@@ -8,6 +8,7 @@ import mongodbImage from '../../Home_Page_Images/mongodb.jpg'
 import htmlImage from '../../Home_Page_Images/HTML&CSS.png'
 import expressImage from '../../Home_Page_Images/express.png'
 import { Toolbar, Typography } from '@mui/material';
+// import {makeStyles} from '@material-ui/core'
 
 const Home = () => {
      const store = useSelector((store) => {

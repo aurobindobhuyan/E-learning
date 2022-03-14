@@ -22,7 +22,7 @@ const CoursesContainer = () => {
     <div className='container'>
       {
         store.allCourses.length === 0 && store.request ? (
-          <div style={{ textAlign: 'center', color: 'red' }}>
+          <div className='loading'>
             <h2>Loading...</h2>
             <LoadingProgress />
           </div>

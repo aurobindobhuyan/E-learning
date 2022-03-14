@@ -7,13 +7,13 @@ const TableForm = (props) => {
      const { handleSearchField } = props
      const [inputField, setInputField] = useState('');
 
-     useEffect(() => {
-          handleSearchField(inputField)
-     }, [inputField])
-
      const store = useSelector((store) => {
           return store
      })
+
+     useEffect(() => {
+          handleSearchField(inputField)
+     }, [inputField])
 
      const handleInputField = (e) => {
           setInputField(e.target.value)
@@ -23,7 +23,7 @@ const TableForm = (props) => {
           <>
                {
                     store.request && (
-                         <div style={{ textAlignLast: 'center', color: 'red' }}>
+                         <div className='loading'>
                               <h1>Loading....</h1>
                               <LoadingProgress />
                          </div>

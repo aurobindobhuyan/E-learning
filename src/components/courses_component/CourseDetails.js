@@ -77,7 +77,7 @@ const CourseDetails = (props) => {
           <>
                {
                     store.request ? (
-                         <div style={{ textAlignLast: 'center', color: 'red' }}>
+                         <div className='loading'>
                               <h4>Loading....</h4>
                               <LoadingProgress />
                          </div>

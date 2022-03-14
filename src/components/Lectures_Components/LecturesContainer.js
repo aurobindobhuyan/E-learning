@@ -19,6 +19,7 @@ const LecturesContainer = (props) => {
      })
      const dispatch = useDispatch()
 
+     // Fetching Lectures data after initial Loading
      useEffect(() => {
           if (store.isLoggedIn && store.allLectures.length === 0) {
                dispatch(asyncGetAllLectures(`/courses/${id}/lectures`))
@@ -35,7 +36,7 @@ const LecturesContainer = (props) => {
                     store.request && store.allCourses.length === 0 ? (
                          <>
                               <Toolbar />
-                              <div style={{ textAlign: 'center', color: "red" }}>
+                              <div className='loading'>
                                    <h1>Loading....</h1>
                                    <LoadingProgress />
                               </div>
@@ -75,7 +76,7 @@ const LecturesContainer = (props) => {
                                              </ListItemButton>
                                              {
                                                   store.request && (
-                                                       <div style={{ textAlign: 'center', color: 'red' }}>
+                                                       <div className='loading'>
                                                             <h6>Loading...</h6>
                                                             <LoadingProgress />
                                                        </div>

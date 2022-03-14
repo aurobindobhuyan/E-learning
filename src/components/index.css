@@ -57,26 +57,10 @@ a {
      max-width: 30vw
 }
 
-/* ShowDetails Component Styles */
-#mainDiv_Demo {
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
-     margin: auto;
-     width: 50vw
-}
-
-#firstChidrenDiv_Demo {
-     flex: 1 1 270px;
-     margin: 30px
-}
-
-#secondChidrenDiv_Demo {
-     flex: 1 1 270px;
-     height: max-content;
-     margin: 30px;
-     text-align: center;
-     background: #f6eaf7
+/* Loading progress */
+.loading {
+     text-align-last: center;
+     color: red
 }
 
 /* Margin Div */

@@ -14,9 +14,7 @@ const AdminRegister = (props) => {
     dispatch(asyncAdimRegister(formData, handleToggleComponent))
   }
 
-  return (
-    <AdminForm handleToggleComponent={handleToggleComponent} formSubmit={formSubmit} />
-  );
+  return <AdminForm handleToggleComponent={handleToggleComponent} formSubmit={formSubmit} />;
 }
 
 export default AdminRegister

@@ -4,7 +4,7 @@ import { CircularProgress, Box } from '@mui/material';
 const LoadingProgress = () => {
      return (
           <>
-               <Box sx={{ display: 'flex', placeContent: 'center' }}>
+               <Box sx={{ flexDirection: 'row', placeContent: 'center' }}>
                     <CircularProgress />
                </Box>
           </>

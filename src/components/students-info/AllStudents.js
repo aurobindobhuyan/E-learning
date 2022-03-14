@@ -12,6 +12,8 @@ const AllStudents = () => {
      const store = useSelector((store) => {
           return store
      })
+
+     // Pie Chart Data
      function updatedData() {
           const allPieChartCourses = { HTML: 0, CSS: 0, javascript: 0, reactjs: 0, nodejs: 0, expressjs: 0, mongodb: 0 }
           store.allCourses.forEach(ele => allPieChartCourses[ele.category] = ele.students.length)
@@ -23,7 +25,7 @@ const AllStudents = () => {
                {
                     store.allStudents.length === 0 && store.request ? (
                          <>
-                              <div style={{ textAlignLast: 'center', color: 'red' }}>
+                              <div className='loading'>
                                    <h1>Loading....</h1>
                                    <LoadingProgress />
                               </div>

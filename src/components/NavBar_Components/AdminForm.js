@@ -62,7 +62,7 @@ const AdminForm = (props) => {
           <>
                {
                     store && (
-                         <div style={{ textAlignLast: 'center', color: 'red' }}>
+                         <div className='loading'>
                               <h4>Loading....</h4>
                               <LoadingProgress />
                          </div>

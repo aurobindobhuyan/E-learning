@@ -22,6 +22,7 @@ const EditLectures = (props) => {
      })
      const dispatch = useDispatch()
 
+     // Fetching Lectures details after initial Loading
      useEffect(() => {
           if (store.isLoggedIn && store.allLectures.length === 0) {
                const result = url.split('/')[2]
@@ -36,6 +37,7 @@ const EditLectures = (props) => {
           }
      }, [store.allLectures])
 
+     // Making API request for Edit Lectures
      const formSubmit = (formData) => {
           dispatch(makingRequest())
           dispatch(asyncUpdateLecture(`/courses/${lectureInfo.course}/lectures/${lectureInfo._id}`, formData))
@@ -57,7 +59,7 @@ const EditLectures = (props) => {
                </CustomizedDialogs>
                {
                     store.request ? (
-                         <div style={{ textAlign: 'center', color: "red" }}>
+                         <div className='loading'>
                               <h1>Loading....</h1>
                               <LoadingProgress />
                          </div>

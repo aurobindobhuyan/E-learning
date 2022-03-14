@@ -1,12 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { ListItemButton, Box, Divider } from '@mui/material';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles(({
+     root: {
+          display: 'flex',
+          justifyContent: 'center',
+          flexWrap: 'wrap',
+          margin: 'auto',
+          width: '60vw'
+     },
+     firstChild: {
+          flex: '1 1 270px',
+          margin: '30px',
+          maxWidth: '330px'
+     },
+     secondChild: {
+          flex: '1 1 270px',
+          height: 'max-content',
+          margin: '30px',
+          textAlign: 'center',
+          background: '#f6eaf7'
+     }
+}))
 
 const ShowDetails = (props) => {
      const { objectFromProps } = props
      const [userInfoWithoutObject, setUserInfoWithoutObject] = useState([]);
      const [userInfoWithObject, setuserInfoWithObject] = useState([]);
      const [selectedText, setSelectedText] = useState('');
+     const classes = useStyles()
 
      const store = useSelector((store) => {
           return store
@@ -27,8 +51,8 @@ const ShowDetails = (props) => {
      }
 
      return (
-          <div id='mainDiv_Demo' style={{ display: 'flex', justifyContent: 'center', flexWrap: "wrap", margin: 'auto', width: '60vw' }}>
-               <div id='firstChidrenDiv_Demo' style={{ flex: '1 1 270px', margin: '30px' }}>
+          <Box className={classes.root}>
+               <Box className={classes.firstChild}>
                     <Box sx={{ width: '100%', maxWidth: 330, bgcolor: 'rgb(246 234 247)' }}>
                          {
                               userInfoWithoutObject.map(ele => {
@@ -50,6 +74,7 @@ const ShowDetails = (props) => {
                                    return (
                                         <ListItemButton
                                              key={ele}
+                                             sx={{ height: 60 }}
                                              selected={selectedText === ele}
                                              onMouseEnter={() => handleListItemClick(ele)}
                                         >
@@ -60,8 +85,8 @@ const ShowDetails = (props) => {
                               })
                          }
                     </Box>
-               </div>
-               <div id='secondChidrenDiv_Demo' style={{ flex: '1 1 270px', height: 'max-content', margin: '30px', textAlign: 'center', background: '#f6eaf7' }}>
+               </Box>
+               <Box className={classes.secondChild}>
                     {
                          Object.keys(objectFromProps).length > 0 && objectFromProps[selectedText] === true ? (
                               <h1>Yes</h1>
@@ -105,8 +130,8 @@ const ShowDetails = (props) => {
                               </>
                          )
                     }
-               </div>
-          </div>
+               </Box>
+          </Box>
      );
 }
 
