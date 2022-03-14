@@ -90,38 +90,6 @@ const LecturesForm = (props) => {
                     helperText={formik.touched.assetURL && formik.errors.assetURL}
                />
 
-               {/* <TextField
-                    id='comments'
-                    name='comments'
-                    autoComplete='off'
-                    margin='normal'
-                    label='comments'
-                    value={formik.values.comments}
-                    onChange={formik.handleChange}
-               /> */}
-
-               {/* <TextField
-                    id='students'
-                    name='students'
-                    autoComplete='off'
-                    margin='normal'
-                    label='students'
-                    value={formik.values.students}
-                    onChange={formik.handleChange}
-               /> */}
-
-               {/* <TextField
-                    id='course'
-                    name='course'
-                    autoComplete='off'
-                    margin='normal'
-                    label='course'
-                    value={formik.values.course}
-                    onChange={formik.handleChange}
-                    error={formik.touched.course && Boolean(formik.errors.course)}
-                    helperText={formik.touched.course && formik.errors.course}
-               /> */}
-
                <FormControl fullWidth>
                     <InputLabel id='isDelete'>Is Delete</InputLabel>
                     <Checkbox
