@@ -6,7 +6,7 @@ import AddCourse from './AddCourse'
 import ListingCourses from './ListingCourses';
 import LoadingProgress from '../LoadingProgress';
 import { removeLectures } from '../../redux/actions/asyncAllLectures';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Typography, Box } from '@mui/material';
 
 const CoursesContainer = () => {
   const store = useSelector((store) => {
@@ -30,13 +30,13 @@ const CoursesContainer = () => {
           <>
             {
               store.userInfo.role === 'admin' && (
-                <div style={{ display: 'flex' }}>
+                <Box sx={{ display: 'flex' }}>
                   <CustomizedDialogs>
                     <LibraryAddIcon fontSize='large' />
                     <AddCourse />
                   </CustomizedDialogs>
                   <h1>Add a new Course</h1>
-                </div>
+                </Box>
               )
             }
             {
@@ -49,7 +49,7 @@ const CoursesContainer = () => {
                 <>
                   {
                     store.request && (
-                      <div style={{ textAlign: 'center', color: 'red' }}>
+                      <div className='loading'>
                         <h3>Loading...</h3>
                         <LoadingProgress />
                       </div>
@@ -57,7 +57,7 @@ const CoursesContainer = () => {
                   }
                   {
                     store.userInfo.role === 'student' && !store.userInfo.isAllowed ? (
-                      <Typography variant='h3' style={{ textAlign: 'center' }}>YOU ARE NOT ALLOWED TO THE COURSES</Typography>
+                      <Typography variant='h3' sx={{ textAlign: 'center' }}>YOU ARE NOT ALLOWED TO THE COURSES</Typography>
                     ) : (
                       <>
                         <h1>All Courses - {store.allCourses.length}</h1>

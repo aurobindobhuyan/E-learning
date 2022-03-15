@@ -73,7 +73,7 @@ const LoginForm = (props) => {
                          </div>
                     )
                }
-               {loginError && <h4 style={{ textAlignLast: 'center', color: 'red' }}>{loginError}</h4>}
+               {loginError && <h4 className='loading'>{loginError}</h4>}
 
                <TextField
                     id='email'

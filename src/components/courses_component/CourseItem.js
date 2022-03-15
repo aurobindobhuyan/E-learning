@@ -6,10 +6,23 @@ import image from '../../Home_Page_Images/card.png'
 import { makingRequest } from '../../redux/actions/requestAction';
 import { makingModalClose } from '../../redux/actions/handleModalAction';
 import { asyncDeleteCOurse } from '../../redux/actions/asyncAllCourses';
-import './courses.css'
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+     card: {
+          transition: theme.transitions.create(["background", "background-color"], {
+               duration: theme.transitions.duration.complex,
+          }),
+          boxShadow: '0 1px 4px rgb(0 0 0 / 60%), 0 2px 6px rgb(0 0 0 / 40%)',
+          '&:hover': {
+               boxShadow: [theme.shadows[12]]
+          }
+     }
+}))
 
 const CourseItem = (props) => {
      const { _id, author, category, level, description, validity } = props
+     const classes = useStyles()
      const store = useSelector((store) => {
           return store.userInfo
      })
@@ -36,7 +49,7 @@ const CourseItem = (props) => {
 
      return (
           <>
-               <Card className='card'>
+               <Card className={classes.card}>
                     <CardActionArea>
                          <CardMedia
                               component="img"

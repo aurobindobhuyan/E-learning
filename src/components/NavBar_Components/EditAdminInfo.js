@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-// import AdminForm from './AdminForm';
 import { makingModalClose } from '../../redux/actions/handleModalAction'
 import { makingRequest } from '../../redux/actions/requestAction'
 import { asyncUpdateUserInfo } from '../../redux/actions/asyncGetUserInfo';
