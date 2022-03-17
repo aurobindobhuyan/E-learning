@@ -22,10 +22,9 @@ const CoursesContainer = () => {
     <div className='container'>
       {
         store.allCourses.length === 0 && store.request ? (
-          <div className='loading'>
+          <LoadingProgress>
             <h2>Loading...</h2>
-            <LoadingProgress />
-          </div>
+          </LoadingProgress>
         ) : (
           <>
             {
@@ -49,10 +48,9 @@ const CoursesContainer = () => {
                 <>
                   {
                     store.request && (
-                      <div className='loading'>
+                      <LoadingProgress>
                         <h3>Loading...</h3>
-                        <LoadingProgress />
-                      </div>
+                      </LoadingProgress>
                     )
                   }
                   {

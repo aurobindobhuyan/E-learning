@@ -26,10 +26,9 @@ const Details = () => {
                }
                {
                     store.request && (
-                         <div className='loading'>
+                         <LoadingProgress>
                               <h2>Loading...</h2>
-                              <LoadingProgress />
-                         </div>
+                         </LoadingProgress>
                     )
                }
                <ShowDisplay objectFromProps={store.userInfo} />

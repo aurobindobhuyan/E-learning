@@ -67,10 +67,9 @@ const LoginForm = (props) => {
                </div>
                {
                     store && (
-                         <div className='loading'>
-                              <h4>Loading....</h4>
-                              <LoadingProgress />
-                         </div>
+                         <LoadingProgress>
+                              <h4>Loading...</h4>
+                         </LoadingProgress>
                     )
                }
                {loginError && <h4 className='loading'>{loginError}</h4>}

@@ -77,10 +77,9 @@ const CourseDetails = (props) => {
           <>
                {
                     store.request ? (
-                         <div className='loading'>
-                              <h4>Loading....</h4>
-                              <LoadingProgress />
-                         </div>
+                         <LoadingProgress>
+                              <h4>Loading...</h4>
+                         </LoadingProgress>
                     ) : (store.allCourses.length > 0 && (
                          <>
                               <Button variant='outlined' startIcon={<KeyboardBackspaceIcon />}>

@@ -1,13 +1,12 @@
 import React from 'react';
 import { CircularProgress, Box } from '@mui/material';
 
-const LoadingProgress = () => {
+const LoadingProgress = ({ children }) => {
      return (
-          <>
-               <Box sx={{ flexDirection: 'row', placeContent: 'center' }}>
-                    <CircularProgress />
-               </Box>
-          </>
+          <Box sx={{ flexDirection: 'row', textAlign: 'center', color: 'red' }}>
+               {children}
+               <CircularProgress />
+          </Box>
      );
 }
 

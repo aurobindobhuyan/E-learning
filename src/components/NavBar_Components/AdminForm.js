@@ -62,10 +62,9 @@ const AdminForm = (props) => {
           <>
                {
                     store && (
-                         <div className='loading'>
-                              <h4>Loading....</h4>
-                              <LoadingProgress />
-                         </div>
+                         <LoadingProgress>
+                              <h4>Loading...</h4>
+                         </LoadingProgress>
                     )
                }
                <form className='formik' onSubmit={formik.handleSubmit}>

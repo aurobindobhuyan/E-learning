@@ -24,12 +24,9 @@ const AllStudents = () => {
           <div className='container'>
                {
                     store.allStudents.length === 0 && store.request ? (
-                         <>
-                              <div className='loading'>
-                                   <h1>Loading....</h1>
-                                   <LoadingProgress />
-                              </div>
-                         </>
+                         <LoadingProgress>
+                              <h1>Loading...</h1>
+                         </LoadingProgress>
                     ) : (
                          <>
                               <div style={{ display: 'flex' }}>
@@ -43,10 +40,10 @@ const AllStudents = () => {
                                    store.allStudents.length > 0 ? (
                                         <>
                                              <DisplayTable />
-                                             <h1 style={{ textAlignLast: 'center'}}>
+                                             <h1 style={{ textAlignLast: 'center' }}>
                                                   Courses & Students Distribution
                                              </h1>
-                                             <div style={{ display: 'flex', justifyContent: 'space-between'  }}>
+                                             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                                                   <PieChart data={updatedData()} />
                                                   <PieChartTable data={updatedData()} />
                                              </div>

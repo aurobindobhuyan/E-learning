@@ -59,10 +59,9 @@ const EditLectures = (props) => {
                </CustomizedDialogs>
                {
                     store.request ? (
-                         <div className='loading'>
-                              <h1>Loading....</h1>
-                              <LoadingProgress />
-                         </div>
+                         <LoadingProgress>
+                              <h1>Loading...</h1>
+                         </LoadingProgress>
                     ) : (
                          <ShowDetails objectFromProps={lectureInfo} />
                     )

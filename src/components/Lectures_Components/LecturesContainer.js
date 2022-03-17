@@ -36,10 +36,7 @@ const LecturesContainer = (props) => {
                     store.request && store.allCourses.length === 0 ? (
                          <>
                               <Toolbar />
-                              <div className='loading'>
-                                   <h1>Loading....</h1>
-                                   <LoadingProgress />
-                              </div>
+                              <LoadingProgress />
                          </>
                     ) : (
                          <div style={{ display: 'flex' }}>
@@ -76,10 +73,9 @@ const LecturesContainer = (props) => {
                                              </ListItemButton>
                                              {
                                                   store.request && (
-                                                       <div className='loading'>
-                                                            <h6>Loading...</h6>
-                                                            <LoadingProgress />
-                                                       </div>
+                                                       <LoadingProgress>
+                                                            <h1>Loading...</h1>
+                                                       </LoadingProgress>
                                                   )
                                              }
                                              <Divider />
