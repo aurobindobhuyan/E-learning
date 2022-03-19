@@ -18,8 +18,8 @@ import LecturesContainer from './Lectures_Components/LecturesContainer';
 import BackgroundLetterAvatars from './Avatar';
 import { userLoggedOut } from '../redux/actions/loginAction'
 import image from '../Home_Page_Images/byjus-app-removebg-preview (1).png'
-import EditLectures from './Lectures_Components/EditLectures';
 import LoginForm from './NavBar_Components/LoginForm';
+import LectureDetails from './Lectures_Components/LectureDetails';
 
 const NavBar = (props) => {
      const [anchorElNav, setAnchorElNav] = useState(null); // NavBar State Variables
@@ -60,32 +60,21 @@ const NavBar = (props) => {
 
      // Navbar Links after loggin in
      const navBarmenu = () => {
-          const adminLink = [
-               <Link to='/'>HOME</Link>,
-               <Link to='/details'>DETAILS</Link>,
-               <Badge color="secondary" badgeContent={store.allStudents.length}>
+          const navBarLinks = [
+               <Link to='/'>HOME</Link>, <Link to='/details'>DETAILS</Link>, <Badge color="secondary" badgeContent={store.allStudents.length}>
                     <Link to='/admin/students'>STUDENTS</Link>
-               </Badge>,
-               <Badge color="primary" badgeContent={store.allCourses.length}>
+               </Badge>, <Badge color="primary" badgeContent={store.allCourses.length}>
                     <Link to='/courses'>COURSES</Link>
-               </Badge>,
-               <Link to='/aboutus'>ABOUT US</Link>,
-               <Link onClick={handleLogout} to='/'>LOGOUT</Link>
-          ]
-          const studentLink = [
-               <Link to='/'>HOME</Link>,
-               <Link to='/details'>DETAILS</Link>,
-               <Badge color="primary">
-                    <Link to='/courses'>COURSES</Link>
-               </Badge>,
-               <Link to='/aboutus'>ABOUT US</Link>,
-               <Link onClick={handleLogout} to='/'>LOGOUT</Link>
-          ]
-          if (localStorage.getItem('role') === 'admin') {
-               return adminLink
-          } else {
-               return studentLink
-          }
+               </Badge>, <Link to='/aboutus'>ABOUT US</Link>, <Link onClick={handleLogout} to='/'>LOGOUT</Link>
+          ].filter(ele => {
+               const res = Object.keys(ele).find(e => typeof ele.props.children === 'object' && ele.props.children.props.children === 'STUDENTS')
+               if (localStorage.getItem('role') === 'admin') {
+                    return ele
+               } else if (localStorage.getItem('role') === 'student' && !res) {
+                    return ele
+               }
+          })
+          return navBarLinks
      }
 
      // Navbar links before login
@@ -154,9 +143,9 @@ const NavBar = (props) => {
                                                        </MenuItem>
                                                   ))
                                              ) : (
-                                                  navBarmenu().map((setting, i) => (
+                                                  navBarmenu().map((link, i) => (
                                                        <MenuItem key={i} onClick={handleCloseNavMenu}>
-                                                            <Typography textAlign="center">{setting}</Typography>
+                                                            <Typography>{link}</Typography>
                                                        </MenuItem>
                                                   ))
                                              )
@@ -180,9 +169,9 @@ const NavBar = (props) => {
                                                   </MenuItem>
                                              ))
                                         ) : (
-                                             navBarmenu().map((setting, i) => (
+                                             navBarmenu().map((link, i) => (
                                                   <MenuItem key={i} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                                                       {setting}
+                                                       <Typography>{link}</Typography>
                                                   </MenuItem>
                                              ))
                                         )
@@ -230,9 +219,9 @@ const NavBar = (props) => {
                                                   onClose={handleCloseUserMenu}
                                              >
                                                   {
-                                                       navBarmenu().map((setting, i) => (
-                                                            <MenuItem key={i} onClick={handleCloseUserMenu}>
-                                                                 <Typography textAlign="center">{setting}</Typography>
+                                                       navBarmenu().map((link, i) => (
+                                                            <MenuItem key={i} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                                                                 <Typography>{link}</Typography>
                                                             </MenuItem>
                                                        ))
                                                   }
@@ -251,7 +240,7 @@ const NavBar = (props) => {
                <Route path='/aboutus' component={AboutUs} />
                <Route path="/courses/:id" exact component={CourseDetails} />
                <Route path='/courses/:id/lectures' exact component={LecturesContainer} />
-               <Route path='/courses/:id/lectures/:id' component={EditLectures} />
+               <Route path='/courses/:id/lectures/:id' component={LectureDetails} />
           </>
      );
 }
