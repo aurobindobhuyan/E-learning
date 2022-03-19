@@ -3,11 +3,6 @@
 
 An online learning platform is a space or portal filled with educational content. It is also an excellent way for the student and the teacher to monitor student progress. With online education, students can turn anywhere with Internet access and electricity into a classroom.
 
-## Demo
-
-https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35-ae8a-8152f97f2fe7.mp4
-
-
 ## Tech Stack
 
 - 💻 JavaScript | ES6
