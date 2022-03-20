@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CardActionArea, Card, CardContent, CardMedia, Typography, Button, CardActions } from '@mui/material';
 import swal from 'sweetalert';
-import image from '../../Home_Page_Images/card.png'
 import { makingRequest } from '../../redux/actions/requestAction';
 import { makingModalClose } from '../../redux/actions/handleModalAction';
 import { asyncDeleteCOurse } from '../../redux/actions/asyncAllCourses';
@@ -19,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
           }
      }
 }))
+
 
 const CourseItem = (props) => {
      const { _id, author, category, level, description, validity } = props
@@ -54,8 +54,7 @@ const CourseItem = (props) => {
                          <CardMedia
                               component="img"
                               height="140"
-                              image={image}
-                              alt="course image"
+                              image='https://source.unsplash.com/random/?coding'
                          />
                          <CardContent>
                               <Typography variant="h6">
