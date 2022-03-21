@@ -9,9 +9,6 @@ import './components/index.css'
 import './components/students-info/studentsInfo.css'
 
 const store = configureStore()
-store.subscribe(() => {
-  console.log('store updated', store.getState())
-})
 
 ReactDOM.render(
   <Provider store={store}>
