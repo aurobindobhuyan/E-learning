@@ -7,6 +7,19 @@ import { asyncGetUserInfo } from './redux/actions/asyncGetUserInfo'
 import { asyncAllStudents } from './redux/actions/asyncAllStudents'
 import { makingRequest } from './redux/actions/requestAction'
 import { asyncAllCourses } from './redux/actions/asyncAllCourses';
+import { createTheme, ThemeProvider } from '@mui/material/styles'
+
+const theme = createTheme({
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        outlined: {
+          backgroundImage: 'linear-gradient(93deg, #e1d5e9, #f4f4f9, #e5f3f1)'
+        }
+      },
+    },
+  },
+});
 
 function App() {
   const store = useSelector((store) => {
@@ -35,7 +48,9 @@ function App() {
 
   return (
     <div id='appDiv2'>
-      <NavBar />
+      <ThemeProvider theme={theme}>
+        <NavBar />
+      </ThemeProvider>
       <DirectionSnackbar />
     </div>
   );
