@@ -174,7 +174,7 @@ const CourseForm = (props) => {
                     autoComplete='off'
                />
 
-               <Button variant='success' type='submit'>Save</Button>
+               <Button variant='secondary' type='submit'>Save</Button>
           </form>
      );
 }

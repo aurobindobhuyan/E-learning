@@ -10,8 +10,8 @@ import { makingModalOpen } from '../../redux/actions/handleModalAction';
 import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles({
-     helperText:{
-          color:'#d32f2f'
+     helperText: {
+          color: '#d32f2f'
      }
 })
 
@@ -104,7 +104,7 @@ const AdminForm = (props) => {
                          {
                               !username && (
                                    <FormControl variant='outlined'>
-                                        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                        <InputLabel sx={{ color: formik.touched.password ? '#d32f2f' : '#666666' }} htmlFor="outlined-adornment-password">Password</InputLabel>
                                         <OutlinedInput
                                              type={showHidePassword ? 'text' : 'password'}
                                              id='password'
@@ -157,7 +157,7 @@ const AdminForm = (props) => {
                          <FormHelperText className={classes.helperText}>{getIn(formik.touched, 'academy.website') && getIn(formik.errors, 'academy.website')}</FormHelperText>
                     </FormControl>
 
-                    <Button variant='outlined' type='submit'>
+                    <Button variant='secondary' type='submit'>
                          {username ? 'Update Info' : 'create Data'}
                     </Button>
 

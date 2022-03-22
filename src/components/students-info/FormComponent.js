@@ -126,7 +126,7 @@ const FormComponent = (props) => {
                          />
                     </FormControl>
 
-                    <Button type='submit' variant='outlined'>Save</Button>
+                    <Button type='submit' variant='secondary'>Save</Button>
                </form>
           </>
      );

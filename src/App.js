@@ -14,7 +14,17 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         outlined: {
-          backgroundImage: 'linear-gradient(93deg, #e1d5e9, #f4f4f9, #e5f3f1)'
+          backgroundImage: 'linear-gradient(to top, #f4d6ec 0%, #d9e1ee 100%)'
+        },
+        secondary: {
+          backgroundImage: 'linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%)'
+        },
+        primary: {
+          backgroundImage: 'linear-gradient(-225deg, #c6f3e5 0%, #f0d6eb 100%)'
+        },
+        text: {
+          backgroundImage: 'linear-gradient(-225deg, #cee5df 0%, #eeeaf0 48%, #d0cde7 100%)',
+          color: 'black'
         }
       },
     },

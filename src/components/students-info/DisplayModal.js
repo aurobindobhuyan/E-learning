@@ -34,7 +34,7 @@ function ChildModal({ chidren }) {
 
      return (
           <>
-               <Button variant="outlined" onClick={handleOpen}>More Info about user</Button>
+               <Button variant="text" onClick={handleOpen}>More Info about user</Button>
                <Modal
                     hideBackdrop
                     open={open}
@@ -59,7 +59,7 @@ function ChildModal({ chidren }) {
                                    </>
                               )
                          }
-                         <Button variant="outlined" onClick={handleClose}>Close Child Modal</Button>
+                         <Button variant="text" onClick={handleClose}>Close Child Modal</Button>
                     </Box>
                </Modal>
           </>
@@ -77,7 +77,7 @@ export default function NestedModal({ children }) {
 
      return (
           <div>
-               <Button variant="outlined" onClick={handleOpen}>DETAILS</Button>
+               <Button variant="primary" onClick={handleOpen}>DETAILS</Button>
                <Modal
                     open={open}
                     onClose={handleClose}

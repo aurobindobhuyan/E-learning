@@ -63,9 +63,9 @@ const NavBar = (props) => {
           const navBarLinks = [
                <Link to='/'>HOME</Link>, <Link to='/details'>DETAILS</Link>, <Badge color="secondary" badgeContent={store.allStudents.length}>
                     <Link to='/admin/students'>STUDENTS</Link>
-               </Badge>, <Badge color="primary" badgeContent={store.allCourses.length}>
+               </Badge>, store.userInfo.role === 'admin' ? <Badge color="primary" badgeContent={store.allCourses.length}>
                     <Link to='/courses'>COURSES</Link>
-               </Badge>, <Link to='/aboutus'>ABOUT US</Link>, <Link onClick={handleLogout} to='/'>LOGOUT</Link>
+               </Badge> : <Link to='/courses'>COURSES</Link>, , <Link to='/aboutus'>ABOUT US</Link>, <Link onClick={handleLogout} to='/'>LOGOUT</Link>
           ].filter(ele => {
                const res = Object.keys(ele).find(e => typeof ele.props.children === 'object' && ele.props.children.props.children === 'STUDENTS')
                if (localStorage.getItem('role') === 'admin') {
@@ -80,25 +80,21 @@ const NavBar = (props) => {
      // Navbar links before login
      const initialLink = [
           (!store.isLoggedIn && toggleLoginRegister) ? (
-               <>
-                    <CustomizedDialogs>
-                         <>
-                              <span>REGISTER</span>
-                              <RememberMeOutlinedIcon fontSize='large' />
-                         </>
-                         <AdminRegister handleToggleComponent={handleToggleComponent} />
-                    </CustomizedDialogs>
-               </>
-          ) : (!store.isLoggedIn && !toggleLoginRegister) &&
-          <>
                <CustomizedDialogs>
                     <>
-                         <span>LOG IN</span>
-                         <LockOpenSharpIcon fontSize='medium' />
+                         <span>REGISTER</span>
+                         <RememberMeOutlinedIcon fontSize='large' />
                     </>
-                    <LoginForm handleToggleComponent={handleToggleComponent} />
+                    <AdminRegister handleToggleComponent={handleToggleComponent} />
                </CustomizedDialogs>
-          </>
+          ) : (!store.isLoggedIn && !toggleLoginRegister) &&
+          <CustomizedDialogs>
+               <>
+                    <span>LOG IN</span>
+                    <LockOpenSharpIcon fontSize='medium' />
+               </>
+               <LoginForm handleToggleComponent={handleToggleComponent} />
+          </CustomizedDialogs>
      ]
 
      return (
@@ -220,7 +216,7 @@ const NavBar = (props) => {
                                              >
                                                   {
                                                        navBarmenu().map((link, i) => (
-                                                            <MenuItem key={i} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                                                            <MenuItem key={i} onClick={handleCloseUserMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
                                                                  <Typography>{link}</Typography>
                                                             </MenuItem>
                                                        ))
