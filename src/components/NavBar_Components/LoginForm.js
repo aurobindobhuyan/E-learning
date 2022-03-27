@@ -79,7 +79,7 @@ const LoginForm = (props) => {
                     name='email'
                     placeholder='example@gmail.com'
                     label='Enter your Email'
-                    margin='dense'
+                    margin='normal'
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     error={formik.touched.email && Boolean(formik.errors.email)}
@@ -87,7 +87,7 @@ const LoginForm = (props) => {
                />
 
                <FormControl variant="outlined">
-                    <InputLabel htmlFor="password">Password</InputLabel>
+                    <InputLabel error={Boolean(formik.touched.password && formik.errors.password)} htmlFor="password">Password</InputLabel>
                     <OutlinedInput
                          id="password"
                          name='password'
@@ -109,7 +109,7 @@ const LoginForm = (props) => {
                               </InputAdornment>
                          }
                     />
-                    <FormHelperText style={{ color: '#d32f2f' }}>
+                    <FormHelperText>
                          {formik.touched.password && formik.errors.password}
                     </FormHelperText>
                </FormControl>

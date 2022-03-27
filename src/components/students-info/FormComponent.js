@@ -50,80 +50,82 @@ const FormComponent = (props) => {
                }
                <form className='formik' onSubmit={formik.handleSubmit}>
 
-                    <TextField
-                         id='name'
-                         name='name'
-                         label='Name'
-                         margin='normal'
-                         value={formik.values.name}
-                         onChange={formik.handleChange}
-                         error={formik.touched.name && Boolean(formik.errors.name)}
-                         helperText={formik.touched.name && formik.errors.name}
-                         autoComplete='off'
-                    />
-
-                    <TextField
-                         id='email'
-                         name='email'
-                         label='Email'
-                         margin='normal'
-                         value={formik.values.email}
-                         onChange={formik.handleChange}
-                         error={formik.touched.email && Boolean(formik.errors.email)}
-                         helperText={formik.touched.email && formik.errors.email}
-                         autoComplete='off'
-                    />
-
-                    {
-                         !name && (
-                              <>
-                                   <FormControl variant='outlined'>
-                                        <InputLabel htmlFor='password'>Password</InputLabel>
-                                        <OutlinedInput
-                                             type={showPassword ? 'string' : 'password'}
-                                             id='password'
-                                             name='password'
-                                             label='Password'
-                                             margin='normal'
-                                             value={formik.values.password}
-                                             onChange={formik.handleChange}
-                                             error={formik.touched.password && Boolean(formik.errors.password)}
-                                             helperText={formik.touched.name && formik.errors.password}
-                                             autoComplete='off'
-                                             endAdornment={
-                                                  <InputAdornment position="end">
-                                                       <IconButton
-                                                            aria-label="toggle password visibility"
-                                                            onClick={() => { setShowPassword(!showPassword) }}
-                                                            edge="end"
-                                                       >
-                                                            {!showPassword ? <VisibilityOff /> : <Visibility />}
-                                                       </IconButton>
-                                                  </InputAdornment>
-                                             }
-                                        />
-                                        <FormHelperText style={{ color: '#d32f2f' }}>
-                                             {formik.touched.password && formik.errors.password}
-                                        </FormHelperText>
-                                   </FormControl>
-                              </>
-                         )
-                    }
-
                     <FormControl>
-                         <InputLabel id='isAllowed'>Is Allowed</InputLabel>
-                         <Checkbox
-                              id='isAllowed'
-                              name='isAllowed'
-                              label='isAllowed'
-                              disabled={!name}
-                              checked={formik.values.isAllowed}
-                              value={formik.values.isAllowed}
-                              color='success'
+                         <TextField
+                              id='name'
+                              name='name'
+                              label='Name'
+                              margin='normal'
+                              value={formik.values.name}
                               onChange={formik.handleChange}
-                              icon={<FavoriteBorder />}
-                              checkedIcon={<Favorite />}
+                              error={formik.touched.name && Boolean(formik.errors.name)}
+                              autoComplete='off'
                          />
+                         <FormHelperText>{formik.touched.name && formik.errors.name}</FormHelperText>
+
+                         <TextField
+                              id='email'
+                              name='email'
+                              label='Email'
+                              margin='normal'
+                              value={formik.values.email}
+                              onChange={formik.handleChange}
+                              error={formik.touched.email && Boolean(formik.errors.email)}
+                              autoComplete='off'
+                         />
+                         <FormHelperText>{formik.touched.email && formik.errors.email}</FormHelperText>
+
+                         {
+                              !name && (
+                                   <>
+                                        <FormControl variant='outlined'>
+                                             <InputLabel
+                                                  error={Boolean(formik.touched.password && formik.errors.password)} htmlFor='password'>
+                                                  Password
+                                             </InputLabel>
+                                             <OutlinedInput
+                                                  type={showPassword ? 'string' : 'password'}
+                                                  id='password'
+                                                  name='password'
+                                                  margin='dense'
+                                                  value={formik.values.password}
+                                                  onChange={formik.handleChange}
+                                                  error={formik.touched.password && Boolean(formik.errors.password)}
+                                                  autoComplete='off'
+                                                  endAdornment={
+                                                       <InputAdornment position="end">
+                                                            <IconButton
+                                                                 aria-label="toggle password visibility"
+                                                                 onClick={() => { setShowPassword(!showPassword) }}
+                                                                 edge="end"
+                                                            >
+                                                                 {!showPassword ? <VisibilityOff /> : <Visibility />}
+                                                            </IconButton>
+                                                       </InputAdornment>
+                                                  }
+                                             />
+                                             <FormHelperText>
+                                                  {formik.touched.password && formik.errors.password}
+                                             </FormHelperText>
+                                        </FormControl>
+                                   </>
+                              )
+                         }
+
+                         <FormControl>
+                              <InputLabel htmlFor='isAllowed'>Is Allowed</InputLabel>
+                              <Checkbox
+                                   id='isAllowed'
+                                   name='isAllowed'
+                                   disabled={!name}
+                                   checked={formik.values.isAllowed}
+                                   value={formik.values.isAllowed}
+                                   color='success'
+                                   onChange={formik.handleChange}
+                                   icon={<FavoriteBorder />}
+                                   checkedIcon={<Favorite />}
+                              />
+                         </FormControl>
                     </FormControl>
 
                     <Button type='submit' variant='secondary'>Save</Button>

@@ -20,7 +20,7 @@ const AboutUs = () => {
      const classes = useStyles()
      return (
           <>
-               <Typography className={classes.about}>About Me</Typography>
+               <Typography className={classes.about}>Credits:-</Typography>
                <Typography className={classes.typography}>Name : Aurobindo Bhuyan</Typography>
           </>
      );

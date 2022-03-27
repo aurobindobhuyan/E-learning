@@ -45,134 +45,135 @@ const CourseForm = (props) => {
 
      return (
           <form className='formik' onSubmit={formik.handleSubmit}>
-               <TextField
-                    id='name'
-                    name='name'
-                    label='Name of the course'
-                    margin='normal'
-                    value={formik.values.name}
-                    onChange={formik.handleChange}
-                    error={formik.touched.name && Boolean(formik.errors.name)}
-                    helperText={formik.touched.name && formik.errors.name}
-                    autoComplete='off'
-               />
-
-               <TextField
-                    id='description'
-                    name='description'
-                    label='Description'
-                    margin='normal'
-                    value={formik.values.description}
-                    onChange={formik.handleChange}
-                    error={formik.touched.description && Boolean(formik.errors.description)}
-                    helperText={formik.touched.description && formik.errors.description}
-                    autoComplete='off'
-               />
-
-               <TextField
-                    type='number'
-                    id='duration'
-                    name='duration'
-                    label='Duration in months'
-                    margin='normal'
-                    value={formik.values.duration}
-                    onChange={formik.handleChange}
-                    error={formik.touched.duration && Boolean(formik.errors.duration)}
-                    helperText={formik.touched.duration && formik.errors.duration}
-                    autoComplete='off'
-               />
-
-               <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <DatePicker
-                         label="Release course"
-                         format="dd/MM/yyyy"
-                         value={formik.values.releaseDate}
-                         onChange={(newDate => { formik.setFieldValue('releaseDate', newDate ? newDate : null) })}
-                         renderInput={(params) => <TextField {...params} />}
-                    />
-               </LocalizationProvider>
-
-               <FormControl fullWidth>
-                    <InputLabel id='isDelete'>Is Delete</InputLabel>
-                    <Checkbox
-                         id='isDelete'
-                         name='isDelete'
-                         label='Is Delete'
-                         margin='normal'
-                         disabled={!editId}
-                         checked={formik.values.isDelete}
-                         value={formik.values.isDelete}
-                         onChange={formik.handleChange}
-                    />
-               </FormControl>
-
                <FormControl>
-                    <InputLabel id='category'>Category</InputLabel>
-                    <Select
-                         labelId='category'
-                         id='category'
-                         name='category'
-                         value={formik.values.category}
+                    <TextField
+                         id='name'
+                         name='name'
+                         label='Name of the course'
+                         margin='normal'
+                         value={formik.values.name}
                          onChange={formik.handleChange}
-                         error={formik.touched.category && Boolean(formik.errors.category)}
-                    >
-                         <MenuItem value="">
-                              <em>None</em>
-                         </MenuItem>
-                         {
-                              courseCatagories.map(ele => {
-                                   return <MenuItem key={ele} value={ele}>{ele}</MenuItem>
-                              })
-                         }
-                    </Select>
-                    <FormHelperText style={{ color: '#d32f2f' }}>{formik.touched.category && formik.errors.category}</FormHelperText>
-               </FormControl>
+                         error={formik.touched.name && Boolean(formik.errors.name)}
+                         autoComplete='off'
+                    />
+                    <FormHelperText>{formik.touched.name && formik.errors.name}</FormHelperText>
 
-               <TextField
-                    type='number'
-                    id='validity'
-                    name='validity'
-                    label='validity'
-                    margin='normal'
-                    value={formik.values.validity}
-                    onChange={formik.handleChange}
-                    error={formik.touched.validity && Boolean(formik.errors.validity)}
-                    helperText={formik.touched.validity && formik.errors.validity}
-                    autoComplete='off'
-               />
-
-               <FormControl fullWidth>
-                    <InputLabel id="level">Level</InputLabel>
-                    <Select
-                         labelId="level"
-                         id="level"
-                         name='level'
-                         label="Level"
-                         value={formik.values.level}
+                    <TextField
+                         id='description'
+                         name='description'
+                         label='Description'
+                         margin='normal'
+                         value={formik.values.description}
                          onChange={formik.handleChange}
-                         error={formik.touched.level && Boolean(formik.errors.level)}
-                    >
-                         <MenuItem value="">
-                              <em>None</em>
-                         </MenuItem>
-                         <MenuItem value='beginner'>Beginner</MenuItem>
-                         <MenuItem value='intermediate'>Intermediate</MenuItem>
-                         <MenuItem value='expert'>Expert</MenuItem>
-                    </Select>
-                    <FormHelperText style={{ color: '#d32f2f' }}>{formik.touched.level && formik.errors.level}</FormHelperText>
-               </FormControl>
+                         error={formik.touched.description && Boolean(formik.errors.description)}
+                         autoComplete='off'
+                    />
+                    <FormHelperText>{formik.touched.description && formik.errors.description}</FormHelperText>
 
-               <TextField
-                    id='author'
-                    name='author'
-                    label='author'
-                    margin='normal'
-                    value={formik.values.author}
-                    onChange={formik.handleChange}
-                    error={formik.touched.author && Boolean(formik.errors.author)}
-                    helperText={formik.touched.author && formik.errors.author}
-                    autoComplete='off'
-               />
+                    <TextField
+                         type='number'
+                         id='duration'
+                         name='duration'
+                         label='Duration in months'
+                         margin='normal'
+                         value={formik.values.duration}
+                         onChange={formik.handleChange}
+                         error={formik.touched.duration && Boolean(formik.errors.duration)}
+                         autoComplete='off'
+                    />
+                    <FormHelperText>{formik.touched.duration && formik.errors.duration}</FormHelperText>
+
+                    <LocalizationProvider dateAdapter={AdapterDateFns}>
+                         <DatePicker
+                              label="Release course"
+                              format="dd/MM/yyyy"
+                              value={formik.values.releaseDate}
+                              onChange={(newDate => { formik.setFieldValue('releaseDate', newDate ? newDate : null) })}
+                              renderInput={(params) => <TextField {...params} />}
+                         />
+                    </LocalizationProvider>
+
+                    <FormControl fullWidth>
+                         <InputLabel htmlFor='isDelete'>Is Delete</InputLabel>
+                         <Checkbox
+                              id='isDelete'
+                              name='isDelete'
+                              label='Is Delete'
+                              margin='normal'
+                              disabled={!editId}
+                              checked={formik.values.isDelete}
+                              value={formik.values.isDelete}
+                              onChange={formik.handleChange}
+                         />
+                    </FormControl>
+
+                    <FormControl>
+                         <InputLabel error={Boolean(formik.touched.category && formik.errors.category)} htmlFor='category'>Category</InputLabel>
+                         <Select
+                              label='category'
+                              id='category'
+                              name='category'
+                              value={formik.values.category}
+                              onChange={formik.handleChange}
+                              error={formik.touched.category && Boolean(formik.errors.category)}
+                         >
+                              <MenuItem value="">
+                                   <em>None</em>
+                              </MenuItem>
+                              {
+                                   courseCatagories.map(ele => {
+                                        return <MenuItem key={ele} value={ele}>{ele}</MenuItem>
+                                   })
+                              }
+                         </Select>
+                         <FormHelperText>{formik.touched.category && formik.errors.category}</FormHelperText>
+                    </FormControl>
+
+                    <TextField
+                         type='number'
+                         id='validity'
+                         name='validity'
+                         label='validity'
+                         margin='normal'
+                         value={formik.values.validity}
+                         onChange={formik.handleChange}
+                         error={formik.touched.validity && Boolean(formik.errors.validity)}
+                         autoComplete='off'
+                    />
+                    <FormHelperText>{formik.touched.validity && formik.errors.validity}</FormHelperText>
+
+                    <FormControl fullWidth>
+                         <InputLabel error={Boolean(formik.touched.level && formik.errors.level)} htmlFor="level">Level</InputLabel>
+                         <Select
+                              id="level"
+                              name='level'
+                              label="Level"
+                              value={formik.values.level}
+                              onChange={formik.handleChange}
+                              error={formik.touched.level && Boolean(formik.errors.level)}
+                         >
+                              <MenuItem value="">
+                                   <em>None</em>
+                              </MenuItem>
+                              <MenuItem value='beginner'>Beginner</MenuItem>
+                              <MenuItem value='intermediate'>Intermediate</MenuItem>
+                              <MenuItem value='expert'>Expert</MenuItem>
+                         </Select>
+                         <FormHelperText>{formik.touched.level && formik.errors.level}</FormHelperText>
+                    </FormControl>
+
+                    <TextField
+                         id='author'
+                         name='author'
+                         label='author'
+                         margin='normal'
+                         value={formik.values.author}
+                         onChange={formik.handleChange}
+                         error={formik.touched.author && Boolean(formik.errors.author)}
+                         autoComplete='off'
+                    />
+                    <FormHelperText>{formik.touched.author && formik.errors.author}</FormHelperText>
+               </FormControl>
 
                <Button variant='secondary' type='submit'>Save</Button>
           </form>

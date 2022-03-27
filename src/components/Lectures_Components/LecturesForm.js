@@ -37,71 +37,73 @@ const LecturesForm = (props) => {
 
      return (
           <form className='formik' onSubmit={formik.handleSubmit}>
-               <TextField
-                    id='title'
-                    name='title'
-                    margin='normal'
-                    label='Title'
-                    value={formik.values.title}
-                    onChange={formik.handleChange}
-                    error={formik.touched.title && Boolean(formik.errors.title)}
-                    helperText={formik.touched.title && formik.errors.title}
-               />
-
-               <TextField
-                    id='description'
-                    name='description'
-                    autoComplete='off'
-                    margin='normal'
-                    label='Description'
-                    value={formik.values.description}
-                    onChange={formik.handleChange}
-                    error={formik.touched.description && Boolean(formik.errors.description)}
-                    helperText={formik.touched.description && formik.errors.description}
-               />
-
                <FormControl>
-                    <InputLabel id='assetType'>assetType</InputLabel>
-                    <Select
-                         labelId='assetType'
-                         id='assetType'
-                         name='assetType'
-                         value={formik.values.assetType}
-                         onChange={formik.handleChange}
-                         error={formik.touched.assetType && Boolean(formik.errors.assetType)}
-                    >
-                         <MenuItem value=''>None</MenuItem>
-                         {
-                              assetTYpes.map(ele => <MenuItem key={ele} value={ele}>{ele}</MenuItem>)
-                         }
-                    </Select>
-                    <FormHelperText style={{ color: '#d32f2f' }}>{formik.touched.assetType && formik.errors.assetType}</FormHelperText>
-               </FormControl>
-
-               <TextField
-                    id='assetURL'
-                    name='assetURL'
-                    autoComplete='off'
-                    margin='normal'
-                    label='assetURL'
-                    value={formik.values.assetURL}
-                    onChange={formik.handleChange}
-                    error={formik.touched.assetURL && Boolean(formik.errors.assetURL)}
-                    helperText={formik.touched.assetURL && formik.errors.assetURL}
-               />
-
-               <FormControl fullWidth>
-                    <InputLabel id='isDelete'>Is Delete</InputLabel>
-                    <Checkbox
-                         id='isDelete'
-                         name='isDelete'
-                         label='Is Delete'
+                    <TextField
+                         id='title'
+                         name='title'
                          margin='normal'
-                         disabled={!title}
-                         checked={formik.values.isDelete}
-                         value={formik.values.isDelete}
+                         label='Title'
+                         value={formik.values.title}
                          onChange={formik.handleChange}
+                         error={formik.touched.title && Boolean(formik.errors.title)}
                     />
+                    <FormHelperText>{formik.touched.title && formik.errors.title}</FormHelperText>
+
+                    <TextField
+                         id='description'
+                         name='description'
+                         autoComplete='off'
+                         margin='normal'
+                         label='Description'
+                         value={formik.values.description}
+                         onChange={formik.handleChange}
+                         error={formik.touched.description && Boolean(formik.errors.description)}
+                    />
+                    <FormHelperText>{formik.touched.description && formik.errors.description}</FormHelperText>
+
+                    <FormControl>
+                         <InputLabel error={Boolean(formik.touched.assetType && formik.errors.assetType)} htmlFor='assetType'>assetType</InputLabel>
+                         <Select
+                              label='assetType'
+                              id='assetType'
+                              name='assetType'
+                              value={formik.values.assetType}
+                              onChange={formik.handleChange}
+                              error={formik.touched.assetType && Boolean(formik.errors.assetType)}
+                         >
+                              <MenuItem value=''>None</MenuItem>
+                              {
+                                   assetTYpes.map(ele => <MenuItem key={ele} value={ele}>{ele}</MenuItem>)
+                              }
+                         </Select>
+                         <FormHelperText>{formik.touched.assetType && formik.errors.assetType}</FormHelperText>
+                    </FormControl>
+
+                    <TextField
+                         id='assetURL'
+                         name='assetURL'
+                         autoComplete='off'
+                         margin='normal'
+                         label='assetURL'
+                         value={formik.values.assetURL}
+                         onChange={formik.handleChange}
+                         error={formik.touched.assetURL && Boolean(formik.errors.assetURL)}
+                    />
+                    <FormHelperText>{formik.touched.assetURL && formik.errors.assetURL}</FormHelperText>
+
+                    <FormControl fullWidth>
+                         <InputLabel id='isDelete'>Is Delete</InputLabel>
+                         <Checkbox
+                              id='isDelete'
+                              name='isDelete'
+                              label='Is Delete'
+                              margin='normal'
+                              disabled={!title}
+                              checked={formik.values.isDelete}
+                              value={formik.values.isDelete}
+                              onChange={formik.handleChange}
+                         />
+                    </FormControl>
                </FormControl>
 
                <Button type='submit'>Submit</Button>

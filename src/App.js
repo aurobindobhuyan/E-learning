@@ -28,10 +28,24 @@ const theme = createTheme({
         }
       },
     },
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: {
+          color: '#d32f2f'
+        }
+      }
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        '&.Mui-error': {
+          color: '#d32f2f'
+        }
+      }
+    }
   },
 });
 
-function App() {
+const App = () => {
   const store = useSelector((store) => {
     return store.isLoggedIn
   })

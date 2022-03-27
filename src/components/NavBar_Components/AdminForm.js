@@ -7,16 +7,8 @@ import { getIn, useFormik } from 'formik'
 import * as yup from 'yup'
 import LoadingProgress from '../LoadingProgress';
 import { makingModalOpen } from '../../redux/actions/handleModalAction';
-import { makeStyles } from '@material-ui/core'
-
-const useStyles = makeStyles({
-     helperText: {
-          color: '#d32f2f'
-     }
-})
 
 const AdminForm = (props) => {
-     const classes = useStyles()
      const { formSubmit, username, email, academy, handleToggleComponent } = props
      const [showHidePassword, setShowHidePassword] = React.useState(false);
      const store = useSelector((store) => {
@@ -34,7 +26,7 @@ const AdminForm = (props) => {
           password: yup.string().min(8).max(12).required(),
           academy: yup.object({
                name: yup.string().min(4).required(),
-               website: yup.string().required()
+               website: yup.string().url().required()
           })
      });
 
@@ -43,7 +35,7 @@ const AdminForm = (props) => {
           email: yup.string().email().required(),
           academy: yup.object({
                name: yup.string().min(4).required(),
-               website: yup.string().required()
+               website: yup.string().url().required()
           }),
      });
 
@@ -87,7 +79,7 @@ const AdminForm = (props) => {
                               onChange={formik.handleChange}
                               error={formik.touched.username && Boolean(formik.errors.username)}
                          />
-                         <FormHelperText className={classes.helperText}>{formik.touched.username && formik.errors.username}</FormHelperText>
+                         <FormHelperText>{formik.touched.username && formik.errors.username}</FormHelperText>
 
                          <TextField
                               id='email'
@@ -99,12 +91,12 @@ const AdminForm = (props) => {
                               onChange={formik.handleChange}
                               error={formik.touched.email && Boolean(formik.errors.email)}
                          />
-                         <FormHelperText className={classes.helperText}>{formik.touched.email && formik.errors.email}</FormHelperText>
+                         <FormHelperText>{formik.touched.email && formik.errors.email}</FormHelperText>
 
                          {
                               !username && (
                                    <FormControl variant='outlined'>
-                                        <InputLabel sx={{ color: formik.touched.password ? '#d32f2f' : '#666666' }} htmlFor="outlined-adornment-password">Password</InputLabel>
+                                        <InputLabel error={Boolean(formik.touched.password && formik.errors.password)} htmlFor="outlined-adornment-password">Password</InputLabel>
                                         <OutlinedInput
                                              type={showHidePassword ? 'text' : 'password'}
                                              id='password'
@@ -127,7 +119,7 @@ const AdminForm = (props) => {
                                                   </InputAdornment>
                                              }
                                         />
-                                        <FormHelperText className={classes.helperText}>{formik.touched.password && formik.errors.password}</FormHelperText>
+                                        <FormHelperText>{formik.touched.password && formik.errors.password}</FormHelperText>
                                    </FormControl>
                               )
                          }
@@ -142,7 +134,7 @@ const AdminForm = (props) => {
                               onChange={formik.handleChange}
                               error={Boolean(getIn(formik.touched, 'academy.name') && getIn(formik.errors, 'academy.name'))}
                          />
-                         <FormHelperText className={classes.helperText}>{getIn(formik.touched, 'academy.name') && getIn(formik.errors, 'academy.name')}</FormHelperText>
+                         <FormHelperText>{getIn(formik.touched, 'academy.name') && getIn(formik.errors, 'academy.name')}</FormHelperText>
 
                          <TextField
                               id='website'
@@ -154,7 +146,7 @@ const AdminForm = (props) => {
                               onChange={formik.handleChange}
                               error={Boolean(getIn(formik.touched, 'academy.website') && getIn(formik.errors, 'academy.website'))}
                          />
-                         <FormHelperText className={classes.helperText}>{getIn(formik.touched, 'academy.website') && getIn(formik.errors, 'academy.website')}</FormHelperText>
+                         <FormHelperText>{getIn(formik.touched, 'academy.website') && getIn(formik.errors, 'academy.website')}</FormHelperText>
                     </FormControl>
 
                     <Button variant='secondary' type='submit'>

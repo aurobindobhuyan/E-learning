@@ -74,7 +74,7 @@ const LecturesContainer = (props) => {
                                              {
                                                   store.request && (
                                                        <LoadingProgress>
-                                                            <h1>Loading...</h1>
+                                                            <h4>Loading...</h4>
                                                        </LoadingProgress>
                                                   )
                                              }
