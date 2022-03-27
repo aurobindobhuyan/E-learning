@@ -11,7 +11,7 @@ export const asyncAdimRegister = (formData, handleToggleComponent) => {
                     handleToggleComponent()
                })
                .catch((err) => {
-                    swal((err.message.errors), {
+                    swal('Try different Email or Academy Name', {
                          icon: 'error'
                     })
                     dispatch(cancelRequest())
