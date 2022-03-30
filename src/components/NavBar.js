@@ -24,31 +24,16 @@ import LectureDetails from './Lectures_Components/LectureDetails';
 const NavBar = (props) => {
      const [anchorElNav, setAnchorElNav] = useState(null); // NavBar State Variables
      const [anchorElUser, setAnchorElUser] = useState(null); // NavBar State Variables
-     const [toggleLoginRegister, setToggleLoginRegister] = useState(false);
+     const [toggleLoginRegister, setToggleLoginRegister] = useState(false); // Toggle between Login & Register
 
      const store = useSelector((store) => {
           return store
      })
      const dispatch = useDispatch()
 
-     // Navbar control functions
-     const handleOpenNavMenu = (event) => {
-          setAnchorElNav(event.currentTarget);
-     };
-     const handleOpenUserMenu = (event) => {
-          setAnchorElUser(event.currentTarget);
-     };
-     const handleCloseNavMenu = () => {
-          setAnchorElNav(null);
-     };
-     const handleCloseUserMenu = () => {
-          setAnchorElUser(null);
-     };
-
      const handleToggleComponent = () => {
           setToggleLoginRegister(!toggleLoginRegister)
      }
-     // Navbar control function
 
      const handleLogout = () => {
           dispatch(userLoggedOut())
@@ -116,7 +101,7 @@ const NavBar = (props) => {
                                         aria-label="account of current user"
                                         aria-controls="menu-appbar"
                                         aria-haspopup="true"
-                                        onClick={handleOpenNavMenu}
+                                        onClick={(e) => { setAnchorElNav(e.currentTarget) }}
                                         color="inherit"
                                    >
                                         <MenuIcon />
@@ -128,19 +113,19 @@ const NavBar = (props) => {
                                         keepMounted
                                         transformOrigin={{ vertical: 'top', horizontal: 'left' }}
                                         open={Boolean(anchorElNav)}
-                                        onClose={handleCloseNavMenu}
+                                        onClose={() => { setAnchorElNav(null) }}
                                         sx={{ display: { xs: 'block', md: 'none' } }}
                                    >
                                         {
                                              !store.isLoggedIn ? (
                                                   initialLink.map((page, i) => (
-                                                       <MenuItem key={i} onClick={handleCloseNavMenu}>
+                                                       <MenuItem key={i} onClick={() => { setAnchorElNav(null) }}>
                                                             <Typography textAlign="center">{page}</Typography>
                                                        </MenuItem>
                                                   ))
                                              ) : (
                                                   navBarmenu().map((link, i) => (
-                                                       <MenuItem key={i} onClick={handleCloseNavMenu}>
+                                                       <MenuItem key={i} onClick={() => { setAnchorElNav(null) }}>
                                                             <Typography>{link}</Typography>
                                                        </MenuItem>
                                                   ))
@@ -148,25 +133,20 @@ const NavBar = (props) => {
                                         }
                                    </Menu>
                               </Box>
-                              <Typography
-                                   variant="h6"
-                                   noWrap
-                                   component="div"
-                                   sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                              >
+                              <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} >
                                    <img className='logo' src={image} alt='logo' />
                               </Typography>
                               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                                    {
                                         !store.isLoggedIn ? (
                                              initialLink.map((page, i) => (
-                                                  <MenuItem key={i} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }} >
+                                                  <MenuItem key={i} onClick={() => { setAnchorElNav(null) }} sx={{ my: 2, color: 'white', display: 'block' }} >
                                                        {page}
                                                   </MenuItem>
                                              ))
                                         ) : (
                                              navBarmenu().map((link, i) => (
-                                                  <MenuItem key={i} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                                                  <MenuItem key={i} onClick={() => { setAnchorElNav(null) }} sx={{ my: 2, color: 'white', display: 'block' }}>
                                                        <Typography>{link}</Typography>
                                                   </MenuItem>
                                              ))
@@ -178,7 +158,7 @@ const NavBar = (props) => {
                                         <Box sx={{ flexGrow: 0 }}>
                                              <Tooltip title="Open settings">
                                                   <IconButton
-                                                       onClick={handleOpenUserMenu}
+                                                       onClick={(e) => { setAnchorElUser(e.currentTarget) }}
                                                        sx={{ p: 0 }}
                                                        size="large"
                                                        aria-label="account of current user"
@@ -212,11 +192,11 @@ const NavBar = (props) => {
                                                   keepMounted
                                                   transformOrigin={{ vertical: 'top', horizontal: 'right' }}
                                                   open={Boolean(anchorElUser)}
-                                                  onClose={handleCloseUserMenu}
+                                                  onClose={() => { setAnchorElUser(null) }}
                                              >
                                                   {
                                                        navBarmenu().map((link, i) => (
-                                                            <MenuItem key={i} onClick={handleCloseUserMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                                                            <MenuItem key={i} onClick={() => { setAnchorElUser(null) }} sx={{ my: 2, color: 'white', display: 'block' }}>
                                                                  <Typography>{link}</Typography>
                                                             </MenuItem>
                                                        ))

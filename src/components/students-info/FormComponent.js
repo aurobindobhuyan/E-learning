@@ -87,6 +87,7 @@ const FormComponent = (props) => {
                                                   type={showPassword ? 'string' : 'password'}
                                                   id='password'
                                                   name='password'
+                                                  label='password'
                                                   margin='dense'
                                                   value={formik.values.password}
                                                   onChange={formik.handleChange}

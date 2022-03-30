@@ -16,7 +16,7 @@ const AddCourse = () => {
 
      return (
           <>
-               <h1>Adding a course</h1>
+               <h1 style={{ textAlign: 'center' }}>Adding a course</h1>
                <CourseForm handleSubmit={handleSubmit} />
           </>
      );
