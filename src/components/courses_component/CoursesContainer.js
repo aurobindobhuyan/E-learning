@@ -7,8 +7,17 @@ import ListingCourses from './ListingCourses';
 import LoadingProgress from '../LoadingProgress';
 import { removeLectures } from '../../redux/actions/asyncAllLectures';
 import { Grid, Typography, Box } from '@mui/material';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+  course: {
+    color: theme.palette.info.dark,
+    textAlign: 'center'
+  }
+}))
 
 const CoursesContainer = () => {
+  const classes = useStyles()
   const store = useSelector((store) => {
     return store
   })
@@ -58,7 +67,7 @@ const CoursesContainer = () => {
                       <Typography variant='h3' sx={{ textAlign: 'center' }}>YOU ARE NOT ALLOWED TO THE COURSES</Typography>
                     ) : (
                       <>
-                        <h1>All Courses - {store.allCourses.length}</h1>
+                        <Typography variant='h3' className={classes.course}>ALL COURSES</Typography>
                         <Grid container rowSpacing={5} columnSpacing={{ xs: 10, sm: 14, md: 20 }}>
                           <ListingCourses />
                         </Grid>

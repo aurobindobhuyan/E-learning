@@ -5,7 +5,6 @@ import { Badge, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, T
 import MenuIcon from '@mui/icons-material/Menu'
 import LockOpenSharpIcon from '@mui/icons-material/LockOpenSharp';
 import RememberMeOutlinedIcon from '@mui/icons-material/RememberMeOutlined';
-import swal from 'sweetalert';
 import AdminRegister from './NavBar_Components/AdminRegister';
 import Home from './NavBar_Components/Home';
 import Details from './NavBar_Components/Details';
@@ -13,13 +12,14 @@ import AllStudents from './students-info/AllStudents';
 import CoursesContainer from './courses_component/CoursesContainer';
 import CourseDetails from './courses_component/CourseDetails';
 import AboutUs from './NavBar_Components/AboutUs';
-import CustomizedDialogs from './NavBar_Components/DisplayDialogue';
 import LecturesContainer from './Lectures_Components/LecturesContainer';
-import BackgroundLetterAvatars from './Avatar';
-import { userLoggedOut } from '../redux/actions/loginAction'
-import image from '../Home_Page_Images/byjus-app-removebg-preview (1).png'
 import LoginForm from './NavBar_Components/LoginForm';
 import LectureDetails from './Lectures_Components/LectureDetails';
+import swal from 'sweetalert';
+import CustomizedDialogs from './NavBar_Components/DisplayDialogue';
+import BackgroundLetterAvatars from './Avatar';
+import image from '../Home_Page_Images/byjus-app-removebg-preview (1).png'
+import { userLoggedOut } from '../redux/actions/loginAction'
 
 const NavBar = (props) => {
      const [anchorElNav, setAnchorElNav] = useState(null); // NavBar State Variables
@@ -87,12 +87,7 @@ const NavBar = (props) => {
                <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} className='navBar'>
                     <Container maxWidth="xl">
                          <Toolbar disableGutters>
-                              <Typography
-                                   variant="h6"
-                                   noWrap
-                                   component="div"
-                                   sx={{ mr: 2, display: { xs: 'none', md: 'flex', height: '4rem' } }}
-                              >
+                              <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex', height: '4rem' } }} >
                                    <img className='logo' src={image} alt='logo' />
                               </Typography>
                               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

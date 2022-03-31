@@ -34,10 +34,9 @@ const LecturesContainer = (props) => {
           <>
                {
                     store.request && store.allCourses.length === 0 ? (
-                         <>
-                              <Toolbar />
-                              <LoadingProgress />
-                         </>
+                         <LoadingProgress>
+                              <h1>Loading...</h1>
+                         </LoadingProgress>
                     ) : (
                          <div style={{ display: 'flex' }}>
                               <Box sx={{ display: 'flex' }}>
