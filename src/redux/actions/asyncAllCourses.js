@@ -1,12 +1,13 @@
 import axios from 'axios'
 import swal from 'sweetalert';
+import { baseUrl } from './baseUrl';
 import { cancelRequest } from './requestAction'
 import { successfullyCreatedSnackbar, successfullyUpdatedSnackbar, successfullyDeletedSnackbar } from './handleSnackbar';
 
 export const asyncAllCourses = () => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.get('https://dct-e-learning.herokuapp.com/api/courses', {
+          axios.get(baseUrl + '/courses', {
                headers: {
                     "Authorization": token.isLoggedIn
                }
@@ -26,7 +27,7 @@ export const asyncAllCourses = () => {
 export const asyncCreateCourse = (formData) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.post(`https://dct-e-learning.herokuapp.com/api/courses`, formData, {
+          axios.post(baseUrl + `/courses`, formData, {
                headers: {
                     "Authorization": token.isLoggedIn
                }
@@ -48,7 +49,7 @@ export const asyncCreateCourse = (formData) => {
 export const asyncEditCourse = (id, formData) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.put(`https://dct-e-learning.herokuapp.com/api/courses/${id}`, formData, {
+          axios.put(baseUrl + `/courses/${id}`, formData, {
                headers: {
                     "Authorization": token.isLoggedIn
                }
@@ -70,7 +71,7 @@ export const asyncEditCourse = (id, formData) => {
 export const asyncDeleteCOurse = (id) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.delete(`https://dct-e-learning.herokuapp.com/api/courses/${id}`, {
+          axios.delete(baseUrl + `/courses/${id}`, {
                headers: {
                     "Authorization": token.isLoggedIn
                }

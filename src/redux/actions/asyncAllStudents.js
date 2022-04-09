@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { baseUrl } from './baseUrl';
 import { cancelRequest } from './requestAction'
 import { makingModalClose } from '../../redux/actions/handleModalAction';
 import { successfullyCreatedSnackbar, successfullyUpdatedSnackbar, successfullyDeletedSnackbar } from './handleSnackbar';
@@ -7,7 +8,7 @@ import swal from 'sweetalert';
 export const asyncAllStudents = () => {
      return (dispatch, getState) => {
           const store = getState()
-          axios.get('https://dct-e-learning.herokuapp.com/api/admin/students', {
+          axios.get(baseUrl + '/admin/students', {
                headers: {
                     "Authorization": store.isLoggedIn
                }
@@ -28,7 +29,7 @@ export const asyncAllStudents = () => {
 export const asyncCreateStudent = (url, formData) => {
      return (dispatch, getState) => {
           const store = getState()
-          axios.post(`https://dct-e-learning.herokuapp.com/api${url}`, formData, {
+          axios.post(`${baseUrl}${url}`, formData, {
                headers: {
                     "Authorization": store.isLoggedIn
                }
@@ -56,7 +57,7 @@ export const asyncCreateStudent = (url, formData) => {
 export const asyncUpdateStudentInfo = (url, formData) => {
      return (dispatch, getState) => {
           const store = getState()
-          axios.put(`https://dct-e-learning.herokuapp.com/api${url}`, formData, {
+          axios.put(`${baseUrl}${url}`, formData, {
                headers: {
                     "Authorization": store.isLoggedIn
                }
@@ -78,7 +79,7 @@ export const asyncUpdateStudentInfo = (url, formData) => {
 export const asyncRemoveUser = (url) => {
      return (dispatch, getState) => {
           const store = getState()
-          axios.delete(`https://dct-e-learning.herokuapp.com/api${url}`, {
+          axios.delete(`${baseUrl}${url}`, {
                headers: {
                     "Authorization": store.isLoggedIn
                }

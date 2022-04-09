@@ -1,12 +1,13 @@
 import axios from 'axios'
 import swal from 'sweetalert';
+import { baseUrl } from './baseUrl';
 import { cancelRequest } from './requestAction'
 import { successfullyCreatedSnackbar, successfullyUpdatedSnackbar, successfullyDeletedSnackbar } from './handleSnackbar';
 
 export const asyncGetAllLectures = (url) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.get(`https://dct-e-learning.herokuapp.com/api${url}`, {
+          axios.get(`${baseUrl}${url}`, {
                headers: {
                     "Authorization": token.isLoggedIn
                }
@@ -25,7 +26,7 @@ export const asyncGetAllLectures = (url) => {
 export const asyncCreateLecture = (id, formData) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.post(`https://dct-e-learning.herokuapp.com/api/courses/${id}/lectures`, formData, {
+          axios.post(baseUrl + `/courses/${id}/lectures`, formData, {
                headers: {
                     "Authorization": token.isLoggedIn
                }
@@ -47,7 +48,7 @@ export const asyncCreateLecture = (id, formData) => {
 export const asyncUpdateLecture = (url, formData) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.put(`https://dct-e-learning.herokuapp.com/api${url}`, formData, {
+          axios.put(`${baseUrl}${url}`, formData, {
                headers: {
                     "Authorization": token.isLoggedIn
                }
@@ -69,7 +70,7 @@ export const asyncUpdateLecture = (url, formData) => {
 export const asyncDeleteLectures = (url) => {
      return (dispatch, getState) => {
           const token = getState()
-          axios.delete(`https://dct-e-learning.herokuapp.com/api${url}`, {
+          axios.delete(`${baseUrl}${url}`, {
                headers: {
                     "Authorization": token.isLoggedIn
                }

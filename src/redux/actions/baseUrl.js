@@ -1,0 +1,1 @@
+export const baseUrl = 'https://dct-e-learning.herokuapp.com/api'
