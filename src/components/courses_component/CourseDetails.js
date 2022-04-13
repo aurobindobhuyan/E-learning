@@ -96,9 +96,9 @@ const CourseDetails = (props) => {
                               )}
 
                               {
-                                   store.userInfo.role === 'student' && moment().format(objectId.releaseDate) > moment().format() ? (
+                                   store.userInfo.role === 'student' && moment(objectId.releaseDate) > moment() ? (
                                         <>
-                                             <Typography variant='h3' sx={{ textAlign: 'center' }}>Course will be Release on {objectId.releaseDate}</Typography>
+                                             <Typography variant='h3' sx={{ textAlign: 'center' }}>Course will be Release on - "{moment(objectId.releaseDate).format('Do MMMM YYYY')}"</Typography>
                                         </>
                                    ) : (
                                         <>

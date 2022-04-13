@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import { ListItemButton, Box, Divider } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
+import moment from 'moment';
 
 const useStyles = makeStyles(({
      root: {
@@ -94,6 +95,10 @@ const ShowDetails = (props) => {
                          ) ? (
                               <h1>No</h1>
                          ) : (
+                              Object.keys(objectFromProps).length > 0 && typeof objectFromProps[selectedText] === 'string' && selectedText === 'releaseDate'
+                         ) ? (
+                              <h1>{moment(objectFromProps.releaseDate).format('Do MMMM YYYY')}</h1>
+                         ) :(
                               Object.keys(objectFromProps).length > 0 && typeof objectFromProps[selectedText] === 'string'
                          ) ? (
                               <h1>{objectFromProps[selectedText]}</h1>

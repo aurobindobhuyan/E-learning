@@ -1,11 +1,12 @@
 import axios from "axios"
 import swal from "sweetalert"
+import { baseUrl } from "./baseUrl"
 import { cancelRequest } from './requestAction'
 import { makingModalClose } from "./handleModalAction"
 
 export const adminLoggedIn = (formData, displayErrors) => {
      return (dispatch) => {
-          axios.post('https://dct-e-learning.herokuapp.com/api/admin/login', formData)
+          axios.post(baseUrl + '/admin/login', formData)
                .then((response) => {
                     if (response.data.hasOwnProperty('errors')) {
                          displayErrors(response.data.errors)
@@ -31,7 +32,7 @@ export const adminLoggedIn = (formData, displayErrors) => {
 
 export const studentLoggedIn = (formData, displayErrors) => {
      return (dispatch) => {
-          axios.post('https://dct-e-learning.herokuapp.com/api/students/login', formData)
+          axios.post(baseUrl + '/students/login', formData)
                .then((response) => {
                     if (response.data.hasOwnProperty('errors')) {
                          displayErrors(response.data.errors)

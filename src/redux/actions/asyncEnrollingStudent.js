@@ -1,5 +1,6 @@
 import axios from "axios";
 import swal from "sweetalert";
+import { baseUrl } from "./baseUrl";
 import { cancelRequest } from "./requestAction";
 import { asyncAllStudents } from "./asyncAllStudents";
 import { asyncGetUserInfo } from "./asyncGetUserInfo";
@@ -7,7 +8,7 @@ import { asyncGetUserInfo } from "./asyncGetUserInfo";
 export const asyncEnrollingStudent = (url) => {
      return (dispatch, getState) => {
           const store = getState()
-          axios.patch(`https://dct-e-learning.herokuapp.com/api${url}`, null, {
+          axios.patch(`${baseUrl}${url}`, null, {
                headers: {
                     "Authorization": store.isLoggedIn
                }
@@ -33,7 +34,7 @@ export const asyncEnrollingStudent = (url) => {
 export const asyncUnEnrollingStudent = (url) => {
      return (dispatch, getState) => {
           const store = getState()
-          axios.patch(`https://dct-e-learning.herokuapp.com/api${url}`, null, {
+          axios.patch(`${baseUrl}${url}`, null, {
                headers: {
                     "Authorization": store.isLoggedIn
                }
