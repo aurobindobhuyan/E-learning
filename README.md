@@ -14,7 +14,7 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
 - 🌐 ReactJS | Redux | React Router
 - 🔧 Git | Markdown
 - 📦 Material UI, Axios, date-fns, formik, moment, React, React Router, react-google-charts, react-player, React-redux, Redux, sweetalert, yup
-# About
+## About
 
 - E-Learning-App is a JWT based user-authentication & react-redux based dynamic web application.
 - Where the Teachers as an admin can create courses, students, enrol & unenroll students to the courses, and students can also access all the lectures.
