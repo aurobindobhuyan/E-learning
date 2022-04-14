@@ -46,11 +46,20 @@ const NavBar = (props) => {
      // Navbar Links after loggin in
      const navBarmenu = () => {
           const navBarLinks = [
-               <Link to='/'>HOME</Link>, <Link to='/details'>DETAILS</Link>, <Badge color="secondary" badgeContent={store.allStudents.length}>
+               <Link to='/'>HOME</Link>,
+               <Link to='/details'>DETAILS</Link>,
+               <Badge color="secondary" badgeContent={store.allStudents.length}>
                     <Link to='/admin/students'>STUDENTS</Link>
-               </Badge>, store.userInfo.role === 'admin' ? <Badge color="primary" badgeContent={store.allCourses.length}>
+               </Badge>,
+               store.userInfo.role === 'admin' ? (
+                    <Badge color="primary" badgeContent={store.allCourses.length}>
+                         <Link to='/courses'>COURSES</Link>
+                    </Badge>
+               ) : (
                     <Link to='/courses'>COURSES</Link>
-               </Badge> : <Link to='/courses'>COURSES</Link>, , <Link to='/aboutus'>ABOUT US</Link>, <Link onClick={handleLogout} to='/'>LOGOUT</Link>
+               ),
+               <Link to='/aboutus'>ABOUT US</Link>,
+               <Link onClick={handleLogout} to='/'>LOGOUT</Link>
           ].filter(ele => {
                const res = Object.keys(ele).find(e => typeof ele.props.children === 'object' && ele.props.children.props.children === 'STUDENTS')
                if (localStorage.getItem('role') === 'admin') {
@@ -87,7 +96,12 @@ const NavBar = (props) => {
                <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }} className='navBar'>
                     <Container maxWidth="xl">
                          <Toolbar disableGutters>
-                              <Typography variant="h6" noWrap component="div" sx={{ mr: 2, display: { xs: 'none', md: 'flex', height: '4rem' } }} >
+                              <Typography
+                                   variant="h6"
+                                   noWrap
+                                   component="div"
+                                   sx={{ mr: 2, display: { xs: 'none', md: 'flex', height: '4rem' } }}
+                              >
                                    <img className='logo' src={image} alt='logo' />
                               </Typography>
                               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -128,7 +142,11 @@ const NavBar = (props) => {
                                         }
                                    </Menu>
                               </Box>
-                              <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }} >
+                              <Typography
+                                   variant="h6"
+                                   noWrap component="div"
+                                   sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                              >
                                    <img className='logo' src={image} alt='logo' />
                               </Typography>
                               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
