@@ -24,14 +24,14 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
 - The Teacher as an admin can:-
      - After creating his academy, he can see and edit his details.
      - Admin can perform entire CRUD operation of students.
-     - Admin can perform entire CRUD operation of courses.
+     - He can perform entire CRUD operation of courses.
      - Admin can see the course & student's distribution in a table format.
      - Not only Admin can enroll & un-enroll a student to a particular course. But also student can also do the same thing by there own.
-     - Admin can perform CRUD operation of lectures. And then students can also allo to watch those lectures if he is enrolled with. And many more....
+     - He can perform CRUD operation of lectures. And then students can also allo to watch those lectures if he is enrolled with. And many more....
 
 - The Student can :-
      - He can login by passing right credentials given by admin.
      - Student can see his profile details.
-     - Student can see all the courses available.
+     - He can see all the courses available.
      - Student can enroll and un_enroll to any course that he wants to.
      - After enroll to a course, He can access all the lectures belongs to that course.
