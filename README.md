@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
 
 ## Tech Stack
 
-- 💻 JavaScript | ES6
+- 💻 JavaScript | ES6 | HTML | CSS
 - 🌐 ReactJS | Redux | React Router
 - 🔧 Git | Markdown
 - 📦 Material UI, Axios, date-fns, formik, moment, React, React Router, react-google-charts, react-player, React-redux, Redux, sweetalert, yup
