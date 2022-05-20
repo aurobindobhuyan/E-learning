@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
 
 ## Tech Stack
 
-- 💻 JavaScript | ES6
+- 💻 JavaScript | ES6 | HTML | CSS
 - 🌐 ReactJS | Redux | React Router
 - 🔧 Git | Markdown
 - 📦 Material UI, Axios, date-fns, formik, moment, React, React Router, react-google-charts, react-player, React-redux, Redux, sweetalert, yup
@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
 ## Features
 
 - The most interesting part is here we have two different roles **(Admin, Students)**.
-- The Teacher as an admin can:-
+#### The Teacher as an admin can:-
      - After creating his academy, he can see and edit his details.
      - Admin can perform entire CRUD operation of students.
      - He can perform entire CRUD operation of courses.
@@ -29,7 +29,7 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
      - Not only Admin can enroll & un-enroll a student to a particular course. But also student can also do the same thing by there own.
      - He can perform CRUD operation of lectures. And then students can also allo to watch those lectures if he is enrolled with. And many more....
 
-- The Student can :-
+#### The Student can :-
      - He can login by passing right credentials given by admin.
      - Student can see his profile details.
      - He can see all the courses available.
