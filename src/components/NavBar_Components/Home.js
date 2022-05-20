@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux'
 import image from '../../Home_Page_Images/banner-1.png'
 import jsImage from '../../Home_Page_Images/javascript.png'
@@ -8,9 +8,21 @@ import mongodbImage from '../../Home_Page_Images/mongodb.jpg'
 import htmlImage from '../../Home_Page_Images/HTML&CSS.png'
 import expressImage from '../../Home_Page_Images/express.png'
 import { Toolbar, Typography } from '@mui/material';
-// import {makeStyles} from '@material-ui/core'
 
 const Home = () => {
+     const [displayName, setDisplayName] = useState('');
+
+     const names = "Hello World!"
+     useEffect(() => {
+          let result = displayName
+          for (let i = 0; i < names.length; i++) {
+               setTimeout(() => {
+                    result += names[i]
+                    setDisplayName(result)
+               }, i * 500);
+          }
+     }, [])
+
      const store = useSelector((store) => {
           return store.isLoggedIn
      })
@@ -29,6 +41,12 @@ const Home = () => {
                               <div className='appDiv1'>
                                    <Toolbar />
                                    <h1 style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>POPULAR ONLINE COURSES</h1>
+                                   <Typography
+                                        variant='h4'
+                                        style={{ fontFamily: 'sans-serif', textAlign: 'center', color:'#e111e1' }}
+                                   >
+                                        {displayName}
+                                   </Typography>
                                    <div style={parentDiv}>
                                         <div style={childDiv}>
                                              <figure style={figureTag}>
