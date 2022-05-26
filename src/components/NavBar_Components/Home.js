@@ -12,16 +12,33 @@ import { Toolbar, Typography } from '@mui/material';
 const Home = () => {
      const [displayName, setDisplayName] = useState('');
 
-     const names = "Hello World!"
+     const names = "Welcome to the website...."
+
      useEffect(() => {
-          let result = displayName
-          for (let i = 0; i < names.length; i++) {
+          let result = ''
+          if (displayName.length === 0) {
                setTimeout(() => {
-                    result += names[i]
-                    setDisplayName(result)
-               }, i * 500);
+                    result = displayName
+                    for (let i = 0; i < names.length; i++) {
+                         setTimeout(() => {
+                              result += names[i]
+                              setDisplayName(result)
+                         }, i * 180);
+                    }
+               }, 500)
+          } else if (names.length === displayName.length) {
+               setTimeout(() => {
+                    let res = displayName.split('')
+                    for (let i = res.length; i >= 0; i--) {
+                         setTimeout(() => {
+                              res.pop()
+                              result = res.join('')
+                              setDisplayName(result);
+                         }, i * 50)
+                    }
+               }, 500)
           }
-     }, [])
+     }, [displayName]);
 
      const store = useSelector((store) => {
           return store.isLoggedIn
@@ -42,8 +59,8 @@ const Home = () => {
                                    <Toolbar />
                                    <h1 style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>POPULAR ONLINE COURSES</h1>
                                    <Typography
-                                        variant='h4'
-                                        style={{ fontFamily: 'sans-serif', textAlign: 'center', color:'#e111e1' }}
+                                        variant='h5'
+                                        style={{ fontFamily: 'sans-serif', textAlign: 'center', color: 'rgb(3 149 151)' }}
                                    >
                                         {displayName}
                                    </Typography>
