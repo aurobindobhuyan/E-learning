@@ -6,6 +6,11 @@ An online learning platform is a space or portal filled with educational content
 ## Demo
 
 Test the app: https://aurobindobhuyan.github.io/E-learning/
+```
+Imprtant note: The above URL is ending with "E-learning" is actually not the original URL this is created by github, so some 
+content you might miss in the home page. So you have to login to the website and then again hit the home menu,
+then you will able to see all the content.
+```
 #### To Test the Application here are the demo credentials
      - admin email: aurobindo@gmail.com
      - admin password: secret123
