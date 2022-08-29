@@ -7,9 +7,9 @@ An online learning platform is a space or portal filled with educational content
 
 Test the app: https://aurobindobhuyan.github.io/E-learning/
 ```
-Imprtant note: The above URL is ending with "E-learning" is actually not the original URL this is created by github, so some 
-content you might miss in the home page. So you have to login to the website and then again hit the home menu,
-then you will able to see all the content.
+Important note: The above URL ending with "E-learning" is not the original URL this is created by GitHub, so some 
+content you might miss on the home page. So you have to log in to the website and then again hit the home menu,
+and then you will be able to see all the content.
 ```
 #### To Test the Application here are the demo credentials
      - admin email: aurobindo@gmail.com
@@ -29,21 +29,21 @@ https://user-images.githubusercontent.com/100915096/159109283-9f98c5d1-0dbf-4b35
 ## About
 
 - E-Learning-App is a JWT based user-authentication & react-redux based dynamic web application.
-- Where the Teachers as an admin can create courses, students, enrol & unenroll students to the courses, and students can also access all the lectures.
+- Where the Teachers as admin can create courses, students, enrol & unenroll students to the courses, and students can also access all the lectures.
 ## Features
 
 - The most interesting part is here we have two different roles **(Admin, Students)**.
 #### The Teacher as an admin can:-
      - After creating his academy, he can see and edit his details.
      - Admin can perform entire CRUD operation of students.
-     - He can perform entire CRUD operation of courses.
-     - Admin can see the course & student's distribution in a table format.
-     - Not only Admin can enroll & un-enroll a student to a particular course. But also student can also do the same thing by there own.
-     - He can perform CRUD operation of lectures. And then students can also allo to watch those lectures if he is enrolled with. And many more....
+     - He can perform the entire CRUD operation of courses.
+     - Admin can see the course & student distribution in a table format.
+     - Not only Admin can enrol & un-enroll a student to a particular course. But also students can do the same thing on their own.
+     - He can perform CRUD operation of lectures. And then students can also allow watching those lectures if he is enrolled. And many more....
 
 #### The Student can :-
-     - He can login by passing right credentials given by admin.
+     - He can log in by entering the right credentials given by the admin.
      - Student can see his profile details.
      - He can see all the courses available.
      - Student can enroll and un_enroll to any course that he wants to.
-     - After enroll to a course, He can access all the lectures belongs to that course.
+     - After enrolling on a course, He can access all the lectures belonging to that course.
