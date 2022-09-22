@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/E-learning/static/css/main.212cf345.css",
-    "main.js": "/E-learning/static/js/main.587f1754.js",
-    "static/media/banner-1.png": "/E-learning/static/media/banner-1.7ba5ef44d0a07018ce0a.png",
-    "static/media/byjus-app-removebg-preview (1).png": "/E-learning/static/media/byjus-app-removebg-preview (1).17e77e5ced3cc9af5d27.png",
-    "static/media/HTML&CSS.png": "/E-learning/static/media/HTML&CSS.ebc6d055f19ccfc747ec.png",
-    "static/media/react.png": "/E-learning/static/media/react.1566ba09045310a0710d.png",
-    "static/media/javascript.png": "/E-learning/static/media/javascript.b1ba45619fc6dbe94ab6.png",
-    "static/media/express.png": "/E-learning/static/media/express.3af51e2930b57c3ba584.png",
-    "static/media/redux.png": "/E-learning/static/media/redux.cfaaf009af2b918353b5.png",
-    "index.html": "/E-learning/index.html",
-    "main.212cf345.css.map": "/E-learning/static/css/main.212cf345.css.map",
-    "main.587f1754.js.map": "/E-learning/static/js/main.587f1754.js.map"
+    "main.css": "/static/css/main.212cf345.css",
+    "main.js": "/static/js/main.b19020ad.js",
+    "static/media/banner-1.png": "/static/media/banner-1.7ba5ef44d0a07018ce0a.png",
+    "static/media/byjus-app-removebg-preview (1).png": "/static/media/byjus-app-removebg-preview (1).17e77e5ced3cc9af5d27.png",
+    "static/media/HTML&CSS.png": "/static/media/HTML&CSS.ebc6d055f19ccfc747ec.png",
+    "static/media/react.png": "/static/media/react.1566ba09045310a0710d.png",
+    "static/media/javascript.png": "/static/media/javascript.b1ba45619fc6dbe94ab6.png",
+    "static/media/express.png": "/static/media/express.3af51e2930b57c3ba584.png",
+    "static/media/redux.png": "/static/media/redux.cfaaf009af2b918353b5.png",
+    "index.html": "/index.html",
+    "main.212cf345.css.map": "/static/css/main.212cf345.css.map",
+    "main.b19020ad.js.map": "/static/js/main.b19020ad.js.map"
   },
   "entrypoints": [
     "static/css/main.212cf345.css",
-    "static/js/main.587f1754.js"
+    "static/js/main.b19020ad.js"
   ]
 }
