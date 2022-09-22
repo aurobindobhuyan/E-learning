@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.212cf345.css",
-    "main.js": "/static/js/main.5c9bddc8.js",
+    "main.js": "/static/js/main.b19020ad.js",
     "static/media/banner-1.png": "/static/media/banner-1.7ba5ef44d0a07018ce0a.png",
     "static/media/byjus-app-removebg-preview (1).png": "/static/media/byjus-app-removebg-preview (1).17e77e5ced3cc9af5d27.png",
     "static/media/HTML&CSS.png": "/static/media/HTML&CSS.ebc6d055f19ccfc747ec.png",
@@ -11,10 +11,10 @@
     "static/media/redux.png": "/static/media/redux.cfaaf009af2b918353b5.png",
     "index.html": "/index.html",
     "main.212cf345.css.map": "/static/css/main.212cf345.css.map",
-    "main.5c9bddc8.js.map": "/static/js/main.5c9bddc8.js.map"
+    "main.b19020ad.js.map": "/static/js/main.b19020ad.js.map"
   },
   "entrypoints": [
     "static/css/main.212cf345.css",
-    "static/js/main.5c9bddc8.js"
+    "static/js/main.b19020ad.js"
   ]
 }
