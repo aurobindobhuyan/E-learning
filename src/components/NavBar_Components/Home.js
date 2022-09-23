@@ -28,7 +28,6 @@ const Home = () => {
       const sentence = arr[i];
       let result = "";
       let reverseLoop_IndexTracker = sentence.length;
-
       setTimeout(() => {
         for (let j = 0; j < sentence.length; j++) {
           const element = sentence[j];
@@ -37,7 +36,6 @@ const Home = () => {
             setDisplayName(result);
           }, j * 150);
         }
-
         let timer_indexTracker = 0;
         for (let index = sentence.length; index >= 0; index--) {
           setTimeout(() => {
@@ -48,10 +46,8 @@ const Home = () => {
           timer_indexTracker++;
         }
       }, counter);
-
       counter += sentence.length * 150 * 2 + 1000;
     }
-
     return () => {
       setDisplayName("");
     };

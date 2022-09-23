@@ -223,6 +223,8 @@ const NavBar = (props) => {
                </AppBar>
                <Toolbar />
                <Route path='/' exact component={Home} />
+               <Route path='https://aurobindobhuyan.github.io/E-learning' exact component={Home} />
+               <Route path='/E-learning' exact component={Home} />
                <Route path='/details' component={Details} />
                <Route path='/admin/students' component={AllStudents} />
                <Route path='/courses' exact component={CoursesContainer} />
