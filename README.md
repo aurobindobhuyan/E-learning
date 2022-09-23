@@ -4,11 +4,7 @@
 ## Demo
 
 Test the app: https://aurobindobhuyan.github.io/E-learning/
-```
-Important note: The above URL ending with "E-learning" is not the original URL this is created by GitHub, so some 
-content you might miss on the home page. So you have to log in to the website and then again hit the home menu,
-and then you will be able to see all the content.
-```
+
 #### To Test the Application here are the demo credentials
      - admin email: aurobindo@gmail.com
      - admin password: secret123
